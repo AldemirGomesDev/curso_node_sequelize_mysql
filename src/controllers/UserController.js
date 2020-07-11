@@ -10,7 +10,6 @@ function generateToken(params = {}) {
         expiresIn: 78300,
     });
 }
-
 module.exports = {
 
     async login(req, res) {
@@ -77,6 +76,8 @@ module.exports = {
         const user = await User.create({ name, password, email });
 
         const token = generateToken({ id: user.id });
+
+        user.password = undefined
 
         return res.status(200).send({
             status: 1,

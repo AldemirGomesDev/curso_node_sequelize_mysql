@@ -12,6 +12,7 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.2",
+    "posh-git": "0.0.9",
     "sequelize": "^5.21.6",
     "sequelize-cli": "^5.5.1"
   }

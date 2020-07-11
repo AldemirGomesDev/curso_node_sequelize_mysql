@@ -18,6 +18,12 @@ class User extends Model {
             },
         })
     }
+
+    static associate(models) {
+        this.hasMany(models.Address, { foreignKey: 'user_id', as: 'address' });
+        this.belongsToMany(models.Course, { foreignKey: 'user_id', through: 'user_courses', as: 'courses'});
+    }
+
 }
 
 module.exports = User;
